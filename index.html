@@ -4,10 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>想用科技改變社會嗎？ | Freedom Film Fest 2026 × g0v.tw</title>
-<meta name="description" content="不會寫程式，也能參與。看看臺灣的 g0v.tw 社群和公民團體，怎麼用科技一起解決公共問題。">
-<meta property="og:title" content="想用科技改變社會嗎？">
-<meta property="og:description" content="不會寫程式，也能參與。看看臺灣的 g0v.tw 社群和公民團體，怎麼用科技一起解決公共問題。">
+<meta name="description" content="不會寫程式，也能參與。看看臺灣的 g0v.tw 社群和公民團體，怎麼用科技一起解決公共問題。 You don't need to code to take part. See how Taiwan's g0v.tw community and civic groups use tech to solve public problems together.">
+<meta property="og:title" content="想用科技改變社會嗎？ How to hack civic society with tech?">
+<meta property="og:description" content="不會寫程式，也能參與。 You don't need to code to take part.">
 <meta property="og:type" content="website">
+<script>
+(function () {
+  var n = (navigator.language || "").toLowerCase();
+  var l = n.indexOf("zh") === 0 ? "zh" : "en";
+  try { var s = localStorage.getItem("fff-lang"); if (s === "zh" || s === "en") l = s; } catch (err) {}
+  if (location.hash === "#en") l = "en";
+  if (location.hash === "#zh") l = "zh";
+  document.documentElement.setAttribute("data-lang", l);
+  document.documentElement.lang = l === "zh" ? "zh-Hant" : "en";
+})();
+</script>
 <style>
 :root {
   --ink: #2A2D33; --muted: #4A4F58; --label: #5C616B; --line: #C9CCD1; --soft: #E4E6EA;
@@ -16,9 +27,15 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html:not([data-lang]) [data-l="en"], html[data-lang="zh"] [data-l="en"], html[data-lang="en"] [data-l="zh"] { display: none; }
 body { margin: 0; background: var(--panel); color: var(--ink);
-  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif; line-height: 1.75; font-size: 16px; }
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.75; font-size: 16px; }
+html[data-lang="en"] body { line-height: 1.65; }
 .page { max-width: 640px; margin: 0 auto; background: var(--bg); }
+.langbar { display: flex; justify-content: flex-end; gap: 6px; padding: 8px 12px; background: var(--panel); }
+.langbar button { min-height: 44px; min-width: 64px; padding: 0 14px; border: 1px solid var(--line); background: #fff; color: var(--ink);
+  border-radius: 6px; font: inherit; font-size: 14px; cursor: pointer; }
+.langbar button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
 a { color: var(--accent); } a:hover { color: var(--accent-dark); }
 a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 section, header, footer { padding: 32px 20px; }
@@ -28,7 +45,7 @@ h1, h2, h3, h4 { margin: 0; }
 h2 { font-size: 22px; line-height: 1.35; }
 .lead { font-size: 18px; line-height: 1.6; }
 .eyebrow { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--label); font-family: ui-monospace, Menlo, Consolas, monospace; }
-header { background: var(--panel); border-bottom: 1px solid var(--line); padding-top: 36px; padding-bottom: 28px; display: flex; flex-direction: column; gap: 14px; }
+header { background: var(--panel); border-bottom: 1px solid var(--line); padding-top: 20px; padding-bottom: 28px; display: flex; flex-direction: column; gap: 14px; }
 h1 { font-size: 30px; line-height: 1.25; text-wrap: balance; }
 header .sub { font-size: 17px; line-height: 1.6; }
 header .time { font-size: 13px; color: var(--label); }
@@ -36,8 +53,8 @@ header .time { font-size: 13px; color: var(--label); }
 .kind { padding: 12px 14px; background: var(--panel); border-radius: 4px; }
 .kind strong { display: block; }
 .link-btn { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
-#polis { background: var(--accent-soft); border-bottom: 1px solid var(--line); padding-top: 28px; padding-bottom: 28px; gap: 14px; }
-#polis h2 { font-size: 24px; text-wrap: balance; }
+.polis { background: var(--accent-soft); border-bottom: 1px solid var(--line); padding-top: 28px; padding-bottom: 28px; gap: 14px; }
+.polis h2 { font-size: 24px; text-wrap: balance; }
 .howto { padding: 14px 16px; background: #fff; border-radius: 4px; display: flex; flex-direction: column; gap: 8px; }
 .btn { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 6px; background: var(--accent);
   color: #fff; font-size: 17px; font-weight: 700; text-decoration: none; }
@@ -47,8 +64,8 @@ header .time { font-size: 13px; color: var(--label); }
 .qr p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 ol.steps, .case-body ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
 .small { font-size: 14px; color: var(--muted); }
-#cases { gap: 14px; }
-#cases .intro { font-size: 14px; line-height: 1.6; color: var(--muted); }
+.cases-sec { gap: 14px; }
+.cases-sec .intro { font-size: 14px; line-height: 1.6; color: var(--muted); }
 .cases { border-top: 1px solid var(--line); }
 .case { border-bottom: 1px solid var(--line); }
 .case summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 14px 0; }
@@ -61,6 +78,7 @@ ol.steps, .case-body ol { margin: 0; padding-left: 22px; display: flex; flex-dir
 .case-sign::before { content: "+"; }
 .case[open] .case-sign::before { content: "\2212"; }
 .case-body { padding: 0 0 22px; display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.75; }
+html[data-lang="en"] .case-body { line-height: 1.65; }
 .case-body h4 { font-size: 13px; color: var(--label); letter-spacing: .04em; padding-top: 6px; }
 .case-body h4:first-child { padding-top: 0; }
 .case-links { display: flex; flex-direction: column; gap: 6px; }
@@ -73,13 +91,17 @@ ol.steps, .case-body ol { margin: 0; padding-left: 22px; display: flex; flex-dir
 .res { display: flex; flex-direction: column; gap: 3px; }
 .res a { font-size: 15px; font-weight: 700; }
 .res span { font-size: 14px; line-height: 1.6; color: var(--muted); }
-.res code { font-size: 12px; color: var(--label); }
+.res code { font-size: 12px; color: var(--label); overflow-wrap: anywhere; }
 footer { background: var(--panel); display: flex; flex-direction: column; gap: 6px; padding-bottom: 40px; font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
 <div class="page">
-
+  <nav class="langbar" aria-label="Language / 語言">
+    <button type="button" data-set-lang="zh" lang="zh-Hant">中文</button>
+    <button type="button" data-set-lang="en" lang="en">English</button>
+  </nav>
+  <div data-l="zh" lang="zh-Hant">
   <header>
     <div class="eyebrow">Freedom Film Fest 2026 × g0v.tw</div>
     <h1>想用科技改變社會嗎？</h1>
@@ -87,20 +109,20 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
     <p class="time">約 2 分鐘讀完</p>
   </header>
 
-  <section id="s1">
+  <section>
     <h2>什麼是公民科技？</h2>
     <p class="lead"><strong>用科技和數位工具，讓社會變得更好。</strong></p>
     <p>公民科技大致有兩種做法：</p>
     <div class="kinds">
       <div class="kind"><strong>做出一個工具</strong>讓大家更容易參與公共事務、更方便取用公共服務。例如 Covid-19 期間的「口罩地圖」，幫大家找到附近哪裡還有口罩。<a href="https://www.inside.com.tw/article/18829-pharmacy-masks-maps-online" target="_blank" rel="noopener noreferrer">看當年報導</a></div>
-      <div class="kind"><strong>把人和議題組織起來</strong>串聯社群、推動討論，用科技或開放資料改善政策。例如 <button type="button" class="link-btn" data-goto="case-4">vTaiwan</button>，用線上工具讓不同立場的人一起討論政策。</div>
+      <div class="kind"><strong>把人和議題組織起來</strong>串聯社群、推動討論，用科技或開放資料改善政策。例如 <button type="button" class="link-btn" data-goto="case-zh-4">vTaiwan</button>，用線上工具讓不同立場的人一起討論政策。</div>
     </div>
     <p>不管是哪一種，核心都是用科技拉近人和公共事務的距離。這類專案常用到的素材之一，是開放資料，也就是政府或機構主動公開、任何人都能自由取用的資料。</p>
     <p><strong>不會寫程式，也能參與。</strong>g0v.tw 在 2026 年做了一份參與者問卷，請做過專案的人說出自己貢獻的專長。最多的是議題研究和專案管理，各占 51%；接著是行銷推廣 45%、行政與後勤 40%、文案撰寫 38%；寫程式的只有 28%。（<a href="https://report.claire-cheng.com/en/" target="_blank" rel="noopener noreferrer">問卷報告，英文</a>）</p>
     <p>從研究、管理到推廣，專案的每個環節都需要人。你不必先懂技術：如果你關心某個議題，你對問題的了解，正是專案需要的。</p>
   </section>
 
-  <section id="polis">
+  <section class="polis">
     <h2>來參與馬來西亞的議題討論！</h2>
     <p class="lead"><strong>我們該怎麼解決現在的煙霾問題？</strong></p>
     <p>來投票，看看大家對煙霾有哪些不同的想法，也看看自己和誰的想法比較接近。</p>
@@ -119,7 +141,7 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
     </div>
   </section>
 
-  <section id="s3">
+  <section>
     <h2>g0v.tw 怎麼運作？</h2>
     <p>g0v.tw 零時政府是在臺灣發起的公民科技社群。名字把 gov 的 o 換成 0，代表從零開始，重新思考政府的角色，也代表數位世代用 0 和 1 看世界的眼光。</p>
     <p>g0v.tw 是去中心化的社群，不是一個組織，也沒有人發號施令。專案由參與的人自己發起、自己找夥伴，唯一的條件是認同開源協作。</p>
@@ -134,11 +156,11 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
     <p class="small">參考：<a href="https://g0v.tw/" target="_blank" rel="noopener noreferrer">g0v.tw 官網</a>、<a href="https://jothon.g0v.tw/" target="_blank" rel="noopener noreferrer">g0v.tw 揪松團（籌辦黑客松）</a></p>
   </section>
 
-  <section id="cases">
+  <section class="cases-sec">
     <h2>g0v.tw 社群參與的 6 個臺灣案例</h2>
     <p class="intro">公共問題很難一個人解決。點開看看這些案例怎麼分工，哪一種可以用在你關心的議題？</p>
     <div class="cases">
-      <details class="case" id="case-0">
+      <details class="case" id="case-zh-0">
         <summary>
           <span class="case-head">
             <span class="case-tag">2016 年由 g0v.tw 志工發起</span>
@@ -156,7 +178,7 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
           <div class="case-links"><a class="case-link" href="https://cofacts.tw/" target="_blank" rel="noopener noreferrer">看 Cofacts →</a></div>
         </div>
       </details>
-      <details class="case" id="case-1">
+      <details class="case" id="case-zh-1">
         <summary>
           <span class="case-head">
             <span class="case-tag">2020 年由地球公民基金會與 g0v.tw 志工共同開發</span>
@@ -174,7 +196,7 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
           <div class="case-links"><a class="case-link" href="https://disfactory.tw/" target="_blank" rel="noopener noreferrer">看 Disfactory →</a></div>
         </div>
       </details>
-      <details class="case" id="case-2">
+      <details class="case" id="case-zh-2">
         <summary>
           <span class="case-head">
             <span class="case-tag">2014 年由反核四五六行動與 g0v.tw 志工合作</span>
@@ -192,7 +214,7 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
           <div class="case-links"><a class="case-link" href="https://campaign-finance.g0v.ctiml.tw/" target="_blank" rel="noopener noreferrer">看政治獻金數位化 →</a></div>
         </div>
       </details>
-      <details class="case" id="case-3">
+      <details class="case" id="case-zh-3">
         <summary>
           <span class="case-head">
             <span class="case-tag">由歐噴有限公司（OpenFun）開發</span>
@@ -210,7 +232,7 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
           <div class="case-links"><a class="case-link" href="https://lawtrace.tw/" target="_blank" rel="noopener noreferrer">看 LawTrace →</a></div>
         </div>
       </details>
-      <details class="case" id="case-4">
+      <details class="case" id="case-zh-4">
         <summary>
           <span class="case-head">
             <span class="case-tag">2014 年起由 g0v.tw 志工與政府合作</span>
@@ -228,7 +250,7 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
           <div class="case-links"><a class="case-link" href="https://www.vtaiwan.tw/" target="_blank" rel="noopener noreferrer">看 vTaiwan →</a><a class="case-link" href="https://www.vtaiwan.tw/meetups" target="_blank" rel="noopener noreferrer">加入每週會議 →</a></div>
         </div>
       </details>
-      <details class="case" id="case-5">
+      <details class="case" id="case-zh-5">
         <summary>
           <span class="case-head">
             <span class="case-tag">2016 年起由綠色公民行動聯盟與 g0v.tw 志工合作</span>
@@ -253,7 +275,7 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
     </div>
   </section>
 
-  <section id="more">
+  <section>
     <h2>想知道更多？</h2>
     <div class="group">
       <h3>認識 g0v.tw 和臺灣公民科技</h3>
@@ -272,20 +294,215 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
     <div>內容：Claire、TTL</div>
   </footer>
 
+  </div>
+  <div data-l="en" lang="en">
+  <header>
+    <div class="eyebrow">Freedom Film Fest 2026 × g0v.tw</div>
+    <h1>How to hack civic society with tech?</h1>
+    <p class="sub">You don&#x27;t need to code to take part. See how Taiwan&#x27;s g0v.tw community and civic groups use tech to solve public problems together.</p>
+    <p class="time">2-minute read</p>
+  </header>
+
+  <section>
+    <h2>What is civic tech?</h2>
+    <p class="lead"><strong>Using technology and digital tools to make society better.</strong></p>
+    <p>There are two main ways to do it:</p>
+    <div class="kinds">
+      <div class="kind"><strong>Build a tool</strong>It makes public affairs easier to take part in and public services easier to use. Example: the mask map during Covid-19, which showed where masks were still in stock. <a href="https://knowledge.wharton.upenn.edu/article/taiwans-tech-savvy-citizens-helped-flatten-covid-19-curve/" target="_blank" rel="noopener noreferrer">Read the case study</a></div>
+      <div class="kind"><strong>Bring people and issues together</strong>Connect communities and start discussions, using tech or open data to improve policy. Example: <button type="button" class="link-btn" data-goto="case-en-4">vTaiwan</button>, which uses online tools to help people with different views discuss policy together.</div>
+    </div>
+    <p>Either way, the core is using tech to bring people closer to public affairs. One material these projects often use is open data: data that governments or organisations publish for anyone to use freely.</p>
+    <p>You don&#x27;t need to code to take part. In 2026, g0v.tw surveyed its contributors on the skills they brought to projects. The most common were issue research and project management (51% each), then marketing and outreach (45%), admin and logistics (40%) and copywriting (38%). Only 28% wrote code. (<a href="https://report.claire-cheng.com/en/" target="_blank" rel="noopener noreferrer">Survey report</a>)</p>
+    <p>From research and management to outreach, every part of a project needs people. You don&#x27;t have to know the tech first. If you care about an issue, your understanding of the problem is exactly what a project needs.</p>
+  </section>
+
+  <section class="polis">
+    <h2>Join the discussion on Malaysia&#x27;s issues!</h2>
+    <p class="lead"><strong>How can we solve the current haze problem?</strong></p>
+    <p>Vote to see the different views people hold on the haze, and whose views are closest to yours.</p>
+    <div class="howto">
+      <strong>How does Pol.is work?</strong>
+      <div><strong>1. Vote: </strong>For each view someone has written, press Agree, Disagree or Pass.</div><div><strong>2. Add your view: </strong>If what you want to say hasn&#x27;t been said yet, write a sentence of your own. Others will vote on it too.</div><div><strong>3. See the results: </strong>After you vote, Pol.is draws an “opinion map” that puts people with similar views in the same group. You can see which group you are in, and where the groups agree and disagree.</div>
+    </div>
+    <p>The votes will be the starting point for the Freedom Film Fest workshop.</p>
+    <a class="btn" href="https://pol.is/4mkbdrjhd8" target="_blank" rel="noopener noreferrer">Join the discussion →</a>
+    <div class="qr">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h27v27H0z"/><path stroke="#000000" d="M1 1.5h7m1 0h1m1 0h1m3 0h1m3 0h7M1 2.5h1m5 0h1m2 0h2m1 0h2m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h4m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m2 0h1m1 0h5m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m2 0h1m1 0h4m3 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h3m1 0h2m4 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 8.5h1m4 0h1M1 9.5h1m1 0h1m3 0h2m1 0h3m3 0h1m3 0h1m2 0h1m1 0h1M1 10.5h1m1 0h2m3 0h1m1 0h2m4 0h1m2 0h2m1 0h1m1 0h2M1 11.5h1m1 0h5m1 0h1m2 0h1m1 0h1m1 0h1m3 0h4m1 0h1M1 12.5h1m2 0h1m1 0h1m6 0h1m2 0h4m2 0h1M1 13.5h1m1 0h1m1 0h4m3 0h2m3 0h1m1 0h1m5 0h1M2 14.5h4m5 0h1m1 0h1m1 0h2m2 0h2m3 0h2M1 15.5h2m4 0h1m2 0h1m2 0h1m1 0h2m5 0h2m1 0h1M3 16.5h2m5 0h4m2 0h1m3 0h3M1 17.5h3m1 0h6m2 0h1m2 0h6m2 0h1M9 18.5h1m4 0h1m1 0h2m3 0h1m3 0h1M1 19.5h7m1 0h5m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1M1 20.5h1m5 0h1m3 0h1m4 0h2m3 0h1m2 0h1M1 21.5h1m1 0h3m1 0h1m3 0h1m4 0h6m2 0h1M1 22.5h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m4 0h1m1 0h2M1 23.5h1m1 0h3m1 0h1m1 0h1m1 0h6m1 0h1m1 0h3m1 0h2M1 24.5h1m5 0h1m5 0h1m3 0h5M1 25.5h7m1 0h2m1 0h2m3 0h2m3 0h1m2 0h1"/></svg>
+
+      <p>Ask a friend to scan and vote too.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>How does g0v.tw work?</h2>
+    <p>g0v.tw (say “gov zero”) is a civic tech community that started in Taiwan. The name swaps the “o” in “gov” for a zero: it stands for rethinking the government&#x27;s role from zero, and for how digital natives see the world in 0s and 1s.</p>
+    <p>g0v.tw is a decentralised community, not an organisation, and nobody gives orders. People start their own projects and find their own partners. The only requirement is a belief in open-source collaboration.</p>
+    <p>A project usually starts like this:</p>
+    <ol class="steps"><li><strong>Come to a hackathon: </strong>g0v.tw holds a big hackathon every two months, with around 100 people from different backgrounds.</li><li><strong>Pitch: </strong>anyone can go on stage and take 3 minutes to talk about a problem they want to solve.</li><li><strong>Find partners: </strong>interested people join in and start building together.</li><li><strong>Keep going online: </strong>after the event, people carry on in Slack chat rooms and on HackMD, a shared note-taking tool.</li><li><strong>Open the results: </strong>code and data are released under open-source licences, so anyone can use and change them and build on others&#x27; work.</li></ol>
+    <p class="small">Reference: <a href="https://g0v.tw/intl/en/" target="_blank" rel="noopener noreferrer">g0v.tw intro (English)</a>, <a href="https://jothon.g0v.tw/" target="_blank" rel="noopener noreferrer">g0v.tw Jothon team, who organise the hackathons (Chinese)</a></p>
+  </section>
+
+  <section class="cases-sec">
+    <h2>6 Taiwan cases with g0v.tw&#x27;s community involved</h2>
+    <p class="intro">Public problems are hard to solve alone. Open each case to see how people split the work, and which approach could work for an issue you care about.</p>
+    <div class="cases">
+      <details class="case" id="case-en-0">
+        <summary>
+          <span class="case-head">
+            <span class="case-tag">Started by g0v.tw volunteers in 2016</span>
+            <span class="case-name">Cofacts</span>
+            <span class="case-line">People report suspicious messages, volunteers check each one once, and everyone gets the answer inside their chat app.</span>
+          </span>
+          <span class="case-sign" aria-hidden="true"></span>
+        </summary>
+        <div class="case-body">
+          <h4>The problem</h4>
+          <p>Many people forward news in family and friend groups on chat apps like WhatsApp. In Taiwan, the app is LINE.</p><p>Rumours and scam messages spread in these private groups, where outsiders can&#x27;t see them or correct them. Fact-checking organisations publish their results on websites, but few people leave the chat to look for them.</p><p>Cofacts brings fact-checking into the chat. Forward a suspicious message to Cofacts&#x27; LINE account and you get the result and its sources. There is no app to download, and you never leave the chat.</p>
+          <h4>Who does what</h4>
+          <ol><li>People forward suspicious messages to the chatbot. The messages gather on the Cofacts website as a to-check list.</li><li>Volunteers pick messages from the list, check them, and write a reply with sources. AI flags points of doubt first, but volunteers decide what is true.</li><li>The chatbot stores the volunteers&#x27; results. When someone forwards the same message later, it sends the result straight away.</li></ol>
+          <p>Forwarding fake news is easy. Checking it is hard. With Cofacts, you forward a message to the chatbot and get a result, and once volunteers have checked a message, everyone after that gets the result directly. Volunteers aren&#x27;t always professional fact-checkers, but a 2023 study found Cofacts&#x27; replies were as accurate as professional fact-checks. Thailand also used Cofacts&#x27; open code to build its own version.</p>
+          <div class="case-links"><a class="case-link" href="https://en.cofacts.tw/" target="_blank" rel="noopener noreferrer">Visit Cofacts (English) →</a></div>
+        </div>
+      </details>
+      <details class="case" id="case-en-1">
+        <summary>
+          <span class="case-head">
+            <span class="case-tag">Built in 2020 by Citizens of the Earth, Taiwan and g0v.tw volunteers</span>
+            <span class="case-name">Disfactory</span>
+            <span class="case-line">Residents report with photos, an environmental group confirms and writes it up, and the government acts on illegal factories.</span>
+          </span>
+          <span class="case-sign" aria-hidden="true"></span>
+        </summary>
+        <div class="case-body">
+          <h4>The problem</h4>
+          <p>In Taiwan, some factories are built illegally on farmland. Nearby residents know best where new factories appear, but filing a formal report is complicated and requires your name. Many people fear retaliation and stay silent.</p><p>With Disfactory, a photo and a location are enough to report. You don&#x27;t have to give your name, understand the rules, or face the government alone. The map shows each report&#x27;s progress, such as in progress, power cut or demolished, so reporters can follow it all the way.</p>
+          <h4>Who does what</h4>
+          <ol><li>Residents take photos of a factory, mark the location and upload them to Disfactory. People who can&#x27;t be on site can also compare aerial photos on a computer to help spot suspicious factories.</li><li>The environmental group Citizens of the Earth, Taiwan compares aerial photos with land-zoning data. Once it confirms a violation, it writes an official letter to the local government.</li><li>The local government inspects the site and, under the law, cuts off water and power or orders work to stop.</li></ol>
+          <p>Residents only take photos and report. The environmental group takes on the expert checking and the formal complaint, and the government enforces. Each party does only what it can do. Disfactory also accepts only newly built factories with medium-to-high pollution, so the caseload stays within what the team can handle.</p>
+          <div class="case-links"><a class="case-link" href="https://disfactory.tw/" target="_blank" rel="noopener noreferrer">Visit Disfactory (Chinese) →</a></div>
+        </div>
+      </details>
+      <details class="case" id="case-en-2">
+        <summary>
+          <span class="case-head">
+            <span class="case-tag">2014: an anti-nuclear group and g0v.tw volunteers</span>
+            <span class="case-name">Political Donation Digitisation</span>
+            <span class="case-line">Volunteers type up scanned paper records, turning political donations into searchable digital data.</span>
+          </span>
+          <span class="case-sign" aria-hidden="true"></span>
+        </summary>
+        <div class="case-body">
+          <h4>The problem</h4>
+          <p>Who gave money to which candidate? In 2014, Taiwan&#x27;s political donation records were public by law, but you could only read paper copies in person at the Control Yuan (the government body that oversees officials). You couldn&#x27;t search them, and copying meant photocopying on the spot.</p><p>Members of the anti-nuclear group 反核四五六行動 scanned the paper reports and brought them to a g0v.tw hackathon, asking for help to turn them into digital data. Once typed up, anyone could search them online.</p>
+          <h4>Who does what</h4>
+          <ol><li>Anti-nuclear group members read the paper reports at the Control Yuan and scanned them into about 10 GB of files, which they handed to g0v.tw volunteers.</li><li>Volunteers cut every field into a small image, each holding just one number, one piece of text or one date.</li><li>Netizens look at one small image, type a few characters and they&#x27;re done, with no sign-up or login. Several people type the same cell and their entries are compared, so no separate reviewers are needed.</li></ol>
+          <p>Each cell is tiny, so anyone with a spare moment can help. Within 24 hours, more than 300,000 cells were done. After the project drew public attention, Taiwan&#x27;s Legislative Yuan (its parliament) amended the Political Donations Act in 2018 to require itemised records to be published online, and an official search platform opened in 2019.</p>
+          <div class="case-links"><a class="case-link" href="https://campaign-finance.g0v.ctiml.tw/" target="_blank" rel="noopener noreferrer">Visit the site (Chinese) →</a></div>
+        </div>
+      </details>
+      <details class="case" id="case-en-3">
+        <summary>
+          <span class="case-head">
+            <span class="case-tag">Built by OpenFun Ltd.</span>
+            <span class="case-name">LawTrace</span>
+            <span class="case-line">Parliament data turned into open data, so people can easily see what a bill changes and where it stands.</span>
+          </span>
+          <span class="case-sign" aria-hidden="true"></span>
+        </summary>
+        <div class="case-body">
+          <h4>The problem</h4>
+          <p>A law being amended often has several draft versions. The related data sits on several different websites of the Legislative Yuan (Taiwan&#x27;s parliament), mostly as PDFs, images or scans that you can&#x27;t copy or edit and that are hard to search.</p><p>Parliamentary assistants, journalists and issue campaigners who follow bills every day spend a lot of time browsing sites for data, even retyping it. That leaves less time to draft bills, report and campaign.</p><p>LawTrace puts the data on one website. You can see a law&#x27;s past provisions and the progress of proposed amendments, and compare different versions side by side, article by article. The site updates daily.</p>
+          <h4>Who does what</h4>
+          <ol><li>The LawTrace team turns the Legislative Yuan&#x27;s bills and meeting records from PDFs and images into machine-readable open data that anyone can use.</li><li>The team first interviewed 11 people who follow bills every day, to find out where they get stuck, then built search and article-comparison features. <a href="https://openfun.tw/ly-user-study_en/" target="_blank" rel="noopener noreferrer">Read the research report (English)</a></li><li>g0v.tw&#x27;s monthly Congressthon meet-up lets parliamentary assistants, journalists and issue campaigners share how they use Legislative Yuan data.</li></ol>
+          <p>Parliamentary assistants, journalists and campaigners find data faster with LawTrace and write better bills, reports and campaign material. The cleaned data is also open to everyone, and other teams have already built their own tools on it, such as <a href="https://lyzer.tw/" target="_blank" rel="noopener noreferrer">LYZER (Chinese site)</a>, which summarises Legislative Yuan gazettes.</p>
+          <div class="case-links"><a class="case-link" href="https://lawtrace.tw/" target="_blank" rel="noopener noreferrer">Visit LawTrace (Chinese) →</a></div>
+        </div>
+      </details>
+      <details class="case" id="case-en-4">
+        <summary>
+          <span class="case-head">
+            <span class="case-tag">Since 2014, g0v.tw volunteers working with the government</span>
+            <span class="case-name">vTaiwan</span>
+            <span class="case-line">Find common ground online first, then discuss face to face, and the government responds.</span>
+          </span>
+          <span class="case-sign" aria-hidden="true"></span>
+        </summary>
+        <div class="case-body">
+          <h4>The problem</h4>
+          <p>New technology often moves faster than the law. In 2016, Uber&#x27;s legal status in Taiwan sparked a dispute. Taxi drivers and Uber supporters stood on opposite sides, and it could easily have become two camps shouting at each other.</p><p>vTaiwan lets people with different views start from what they agree on, then talk, instead of fighting from the start.</p>
+          <h4>Who does what</h4>
+          <ol><li>The g0v.tw volunteer community maintains the platform and runs the discussion process. Its open meeting, online and in person, is every Wednesday at 7 pm. It covers project progress and the issues to take up, and everyone is welcome.</li><li>Everyone votes on Pol.is for about a month and can add their own views. The opinion map shows the views everyone agrees on and the ones that divide people most.</li><li>Representatives of the parties involved meet to discuss, guided by the opinion map, and the meeting is livestreamed. The government then responds.</li></ol>
+          <p>In the 2016 Uber case, more than 4,000 people took part in the online vote, Uber agreed to the consensus that emerged, and the government pledged to turn it into new regulation. vTaiwan&#x27;s website says that of the 28+ issues discussed, around 80% led to decisive government action.</p><p>The community recently built an experimental tool, <a href="https://civic.vtaiwan.tw/" target="_blank" rel="noopener noreferrer">CiviTalk</a>, that uses AI to help people see the full picture of an issue, not just pick a side.</p>
+          <div class="case-links"><a class="case-link" href="https://info.vtaiwan.tw/" target="_blank" rel="noopener noreferrer">Visit vTaiwan (English) →</a><a class="case-link" href="https://www.vtaiwan.tw/meetups" target="_blank" rel="noopener noreferrer">Join the weekly meeting (Chinese) →</a></div>
+        </div>
+      </details>
+      <details class="case" id="case-en-5">
+        <summary>
+          <span class="case-head">
+            <span class="case-tag">Since 2016, Green Citizens&#x27; Action Alliance with g0v.tw volunteers</span>
+            <span class="case-name">Thaubing 透明足跡</span>
+            <span class="case-line">Pollution records linked to corporate group data, so you can see which big company is behind the pollution.</span>
+          </span>
+          <span class="case-sign" aria-hidden="true"></span>
+        </summary>
+        <div class="case-body">
+          <h4>The problem</h4>
+          <p>Factories pollute and get fined, and these records are public online. But they are scattered across local environmental bureaus and list only the factory&#x27;s name. Looking at one fine, you can&#x27;t tell which big corporate group the factory belongs to, so it is hard to hold anyone accountable.</p><p>Thaubing puts the records on one website. Look up a factory and you see its pollution record and the corporate group behind it.</p>
+          <h4>Who does what</h4>
+          <ol><li>The environmental group Green Citizens&#x27; Action Alliance puts the government&#x27;s published penalty records and real-time chimney emission data into one database, then pitches the project at g0v.tw to find volunteers.</li><li>g0v.tw volunteers work out parent–subsidiary shareholdings from listed companies&#x27; financial reports, so every factory can be linked to the corporate group behind it. <a href="https://thaubing.gcaa.org.tw/companydata/openGroupLanding/index.html" target="_blank" rel="noopener noreferrer">Corporate-group site (Chinese)</a></li><li>The Alliance keeps tracking and cross-checking the data to find problems you can&#x27;t see from a single fine.</li></ol>
+          <p>One fine tells you little. Linked together, the data shows who is responsible. In 2016 the Alliance used Thaubing to find that the Sixth Naphtha Cracker complex (a large petrochemical complex in Taiwan) recorded 25,000 emission exceedances in 10 months, yet not one was penalised, because the company had marked all of them as invalid.</p>
+          <div class="case-links"><a class="case-link" href="https://thaubing.gcaa.org.tw/" target="_blank" rel="noopener noreferrer">Visit Thaubing (Chinese) →</a></div>
+        </div>
+      </details>
+    </div>
+    <div class="cta">
+      <p>After these examples, share your own view on the haze.</p>
+      <a class="btn" href="https://pol.is/4mkbdrjhd8" target="_blank" rel="noopener noreferrer">Join the discussion →</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Want to know more?</h2>
+    <div class="group"><h3>Learn about g0v.tw and civic tech in Taiwan</h3><div class="res"><a href="https://g0v.tw/intl/en/" target="_blank" rel="noopener noreferrer">g0v.tw intro</a><span>What g0v.tw is and how to join. English.</span><code>g0v.tw/intl/en</code></div><div class="res"><a href="https://report.claire-cheng.com/en/" target="_blank" rel="noopener noreferrer">Who Builds Civic Tech in Taiwan?</a><span>A survey of 127 g0v.tw contributors: who does the work, and what holds them back. English.</span><code>report.claire-cheng.com/en</code></div><div class="res"><a href="https://civictech.tw/" target="_blank" rel="noopener noreferrer">Taiwan Civic Tech Database</a><span>Taiwanese projects collected by the g0v.tw Jothon team. Chinese.</span><code>civictech.tw</code></div></div><div class="group"><h3>See more projects</h3><div class="res"><a href="https://openstartervillage.ocf.tw/en/cards" target="_blank" rel="noopener noreferrer">Open StarTer Village project cards</a><span>Short profiles of 39 open projects, from a board game about open-source collaboration. English.</span><code>openstartervillage.ocf.tw/en/cards</code></div></div>
+  </section>
+
+  <footer>
+    <div>Freedom Film Fest 2026</div>
+    <div>Content: Claire, TTL</div>
+  </footer>
+
+  </div>
 </div>
 <script>
 (function () {
+  var TITLES = {
+    zh: "想用科技改變社會嗎？ | Freedom Film Fest 2026 × g0v.tw",
+    en: "How to hack civic society with tech? | Freedom Film Fest 2026 × g0v.tw"
+  };
+  function setLang(l, save) {
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l === "zh" ? "zh-Hant" : "en";
+    document.title = TITLES[l];
+    var bs = document.querySelectorAll("[data-set-lang]");
+    for (var i = 0; i < bs.length; i++) {
+      bs[i].setAttribute("aria-pressed", bs[i].getAttribute("data-set-lang") === l ? "true" : "false");
+    }
+    if (save) { try { localStorage.setItem("fff-lang", l); } catch (err) {} }
+  }
   function openCase(id) {
     var el = document.getElementById(id);
     if (!el) return;
     el.open = true;
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+  setLang(document.documentElement.getAttribute("data-lang") || "zh", false);
   document.addEventListener("click", function (ev) {
+    var s = ev.target.closest("[data-set-lang]");
+    if (s) { setLang(s.getAttribute("data-set-lang"), true); window.scrollTo(0, 0); return; }
     var t = ev.target.closest("[data-goto]");
     if (t) openCase(t.getAttribute("data-goto"));
   });
-  if (/^#case-\d+$/.test(location.hash)) openCase(location.hash.slice(1));
+  if (/^#case-(zh|en)-\d+$/.test(location.hash)) openCase(location.hash.slice(1));
 })();
 </script>
 </body>
