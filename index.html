@@ -1,17 +1,16 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>想用科技改變社會嗎？ | Freedom Film Fest 2026 × g0v.tw</title>
-<meta name="description" content="不會寫程式，也能參與。看看臺灣的 g0v.tw 社群和公民團體，怎麼用科技一起解決公共問題。 You don't need to code to take part. See how Taiwan's g0v.tw community and civic groups use tech to solve public problems together.">
-<meta property="og:title" content="想用科技改變社會嗎？ How to hack civic society with tech?">
-<meta property="og:description" content="不會寫程式，也能參與。 You don't need to code to take part.">
+<title>How to hack civic society with tech? | Freedom Film Fest 2026 × g0v.tw</title>
+<meta name="description" content="You don't need to code to take part. See how Taiwan's g0v.tw community and civic groups use tech to solve public problems together. 不會寫程式，也能參與。看看臺灣的 g0v.tw 社群和公民團體，怎麼用科技一起解決公共問題。">
+<meta property="og:title" content="How to hack civic society with tech? 想用科技改變社會嗎？">
+<meta property="og:description" content="You don't need to code to take part. 不會寫程式，也能參與。">
 <meta property="og:type" content="website">
 <script>
 (function () {
-  var n = (navigator.language || "").toLowerCase();
-  var l = n.indexOf("zh") === 0 ? "zh" : "en";
+  var l = "en"; // 預設英文（海報是英文）；讀者選過語言就記住
   try { var s = localStorage.getItem("fff-lang"); if (s === "zh" || s === "en") l = s; } catch (err) {}
   if (location.hash === "#en") l = "en";
   if (location.hash === "#zh") l = "zh";
@@ -27,7 +26,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-html:not([data-lang]) [data-l="en"], html[data-lang="zh"] [data-l="en"], html[data-lang="en"] [data-l="zh"] { display: none; }
+html:not([data-lang]) [data-l="zh"], html[data-lang="zh"] [data-l="en"], html[data-lang="en"] [data-l="zh"] { display: none; }
 body { margin: 0; background: var(--panel); color: var(--ink);
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.75; font-size: 16px; }
 html[data-lang="en"] body { line-height: 1.65; }
@@ -495,7 +494,7 @@ footer { background: var(--panel); display: flex; flex-direction: column; gap: 6
     el.open = true;
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-  setLang(document.documentElement.getAttribute("data-lang") || "zh", false);
+  setLang(document.documentElement.getAttribute("data-lang") || "en", false);
   document.addEventListener("click", function (ev) {
     var s = ev.target.closest("[data-set-lang]");
     if (s) { setLang(s.getAttribute("data-set-lang"), true); window.scrollTo(0, 0); return; }
