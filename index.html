@@ -151,17 +151,19 @@ footer .flowers { height: 82px; margin-top: 26px; background: url("data:image/sv
   footer { padding-top: 56px; }
   section > p, section > .lead, .hero-text > .sub, .polis-main > p, .cases-sec .intro { max-width: 680px; }
   .langbar { padding-top: 14px; padding-bottom: 14px; }
-  header { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 56px; align-items: center; padding-top: 24px; padding-bottom: 56px; }
+  /* 對齊（2026-10-21）：首屏與 Pol.is 用同一組欄寬（主欄＋280px 側欄、間距 48px），側欄卡片頂端對齊區塊頂端；並排卡片間距一律 24px */
+  header { display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 48px; align-items: start; padding-top: 24px; padding-bottom: 56px; }
   h1 { font-size: 56px; line-height: 1.08; }
   [data-l="zh"] h1 { font-size: 52px; line-height: 1.2; }
   header .btn, .polis .btn { max-width: 360px; }
-  .hero-qr { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 20px; background: var(--paper); border-radius: 16px; text-align: center; }
-  .hero-qr svg { width: 180px; height: 180px; }
+  .hero-qr { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 24px; background: var(--paper); border-radius: 16px; text-align: center; }
+  .hero-qr svg { width: 200px; height: 200px; }
   .hero-qr p { font-size: var(--fs-6); color: var(--muted); line-height: 1.5; }
-  .kinds { flex-direction: row; gap: 20px; }
+  .kinds { flex-direction: row; gap: 24px; }
   .kind { flex: 1; }
-  .skills { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
-  .polis { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; align-items: center; }
+  .skills { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .skills > p { padding-top: 16px; }  /* 與左邊圖表標題同一高度 */
+  .polis { display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 48px; align-items: start; }
   .polis .qr { flex-direction: column; text-align: center; gap: 12px; padding: 24px; background: var(--paper); border-radius: 16px; }
   .polis .qr svg { width: 200px; height: 200px; }
   ol.steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
@@ -172,7 +174,7 @@ footer .flowers { height: 82px; margin-top: 26px; background: url("data:image/sv
   .case-body { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: start; padding: 4px 0 32px 42px; }
   .cta { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 28px; }
   .cta .btn { flex-shrink: 0; min-width: 240px; }
-  .group { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .group { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 24px; }
   .group h3 { grid-column: 1 / -1; }
   .res { padding: 18px; background: var(--panel); border-radius: 14px; }
   footer .flowers { height: 100px; }
