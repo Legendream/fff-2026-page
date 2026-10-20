@@ -59,9 +59,9 @@ header { background: var(--soft); padding-top: 12px; padding-bottom: 32px; displ
 h1 { font-size: var(--fs-1); line-height: 1.12; font-weight: 800; text-wrap: balance; }
 [data-l="zh"] h1 { font-size: calc(var(--fs-1) - 2px); line-height: 1.25; }
 [data-l="en"] h1 { text-transform: uppercase; letter-spacing: -.01em; }
-h1 .hl { color: var(--orange-ink); display: block; }
-h1 .ln { display: block; }
-[data-l="en"] h1 .hl, [data-l="en"] h1 .ln { display: inline; }  /* 英文標題自然換行（2026-10-21 Claire：原本一詞一行，手機要滑太久） */
+h1 .hl { color: var(--orange-ink); }
+/* 標題中英都依寬度自然換行（2026-10-21 Claire）；中文兩段各自不拆開，太窄時只會在「想用科技／改變社會嗎？」之間換行 */
+[data-l="zh"] h1 span { white-space: nowrap; }
 header .sub { font-size: var(--fs-4); line-height: 1.6; }
 header .time { font-size: var(--fs-6); color: var(--label); }
 .kinds { display: flex; flex-direction: column; gap: 12px; }
