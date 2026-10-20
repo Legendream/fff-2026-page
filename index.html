@@ -171,7 +171,8 @@ footer .flowers { height: 82px; margin-top: 26px; background: url("data:image/sv
   ol.steps li:not(:last-child)::after { left: 38px; right: -16px; top: 14px; bottom: auto; width: auto; height: 2px; }
   .case summary { padding: 18px 0; }
   .case-line { max-width: 680px; }
-  .case-body { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: start; padding: 4px 0 32px 42px; }
+  /* 案例右欄的左緣對齊上方「兩種做法」卡片的分界（內容寬的一半＋12px）：右欄寬＝(內容寬 − 24px) / 2，案例內容左邊縮排 42px 對齊案例名稱 */
+  .case-body { display: grid; grid-template-columns: minmax(0, 1fr) calc((100% + 42px - 24px) / 2); column-gap: 48px; align-items: start; padding: 4px 0 32px 42px; }
   .cta { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 28px; }
   .cta .btn { flex-shrink: 0; min-width: 240px; }
   .group { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 24px; }
