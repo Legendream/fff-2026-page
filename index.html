@@ -62,6 +62,7 @@ h1 { font-size: var(--fs-1); line-height: 1.12; font-weight: 800; text-wrap: bal
 [data-l="en"] h1 { text-transform: uppercase; letter-spacing: -.01em; }
 h1 .hl { color: var(--orange-ink); display: block; }
 h1 .ln { display: block; }
+[data-l="en"] h1 .hl, [data-l="en"] h1 .ln { display: inline; }  /* 英文標題自然換行（2026-10-21 Claire：原本一詞一行，手機要滑太久） */
 header .sub { font-size: var(--fs-4); line-height: 1.6; }
 header .time { font-size: var(--fs-6); color: var(--label); }
 .kinds { display: flex; flex-direction: column; gap: 12px; }
@@ -214,11 +215,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>解決什麼問題</h4>
-          <figure class="shot"><img src="img/cofacts.jpg" width="800" height="292" alt="Cofacts 插畫：懷疑自己收到謠言嗎？馬上加 LINE 查謠言" loading="lazy" decoding="async"><figcaption>圖：Cofacts 宣傳插畫</figcaption></figure>
           <p>很多人會在 WhatsApp 這類聊天軟體的群組裡轉傳消息。在臺灣，大家用的是 LINE。</p><p>謠言和詐騙訊息在這些私人群組裡流傳，群組外的人看不到，也沒辦法出面更正。查核機構雖然把查證結果公布在網站上，但很少人特地離開聊天室搜尋。</p><p>Cofacts 把查證帶進聊天室：轉傳可疑訊息給 Cofacts 的 LINE 帳號，就會收到查證結果和資料來源。不用下載 app，也不用另外開網站，在 LINE 裡就能完成。</p>
           <h4>誰做什麼</h4>
           <ol role="list"><li>民眾把可疑訊息轉傳給聊天機器人，訊息會集中到 Cofacts 網站，變成待查清單。</li><li>志工從清單挑訊息查證，寫下回覆、附上出處。AI 會先標出可疑之處，但真假由志工判斷。</li><li>機器人把志工查證的結果存起來，之後有人轉傳同一則訊息，就直接送出結果。</li></ol>
           <p class="point">轉傳假消息很輕鬆，查證卻很麻煩。用 Cofacts，把訊息轉傳給機器人就能拿到查證結果，而且志工查過一次，之後每個人都能直接收到。志工不一定是專業查核員，但 2023 年有研究發現，Cofacts 的回覆和專業查核機構一樣準確。泰國也用 Cofacts 公開的程式碼，做出了自己的版本。</p>
+          <figure class="shot"><img src="img/cofacts.jpg" width="800" height="292" alt="Cofacts 插畫：懷疑自己收到謠言嗎？馬上加 LINE 查謠言" loading="lazy" decoding="async"><figcaption>圖：Cofacts 宣傳插畫</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://cofacts.tw/" target="_blank" rel="noopener noreferrer">看 Cofacts →</a></div>
         </div>
       </details>
@@ -233,11 +234,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>解決什麼問題</h4>
-          <figure class="shot"><img src="img/disfactory.jpg" width="800" height="621" alt="Disfactory 說明頁：拍照、標記地點上傳，地球公民基金會幫你匿名檢舉" loading="lazy" decoding="async"><figcaption>截圖：Disfactory 說明頁</figcaption></figure>
           <p>在臺灣，有些工廠違法蓋在農地上。附近居民最清楚哪裡冒出新工廠，但正式檢舉程序複雜，還得具名，很多人怕被報復而不敢檢舉。</p><p>Disfactory 讓居民只要拍照、標出地點就能回報，不用具名，不用懂法規，也不用自己面對政府。地圖上公開每件回報的處理進度，例如處理中、已斷電、已拆除，回報的人可以一路追蹤。</p>
           <h4>誰做什麼</h4>
           <ol role="list"><li>居民拍下工廠照片、標記地點，上傳到 Disfactory。不在現場的人，也能在電腦上比對空拍圖，幫忙找出可疑工廠。</li><li>環保團體地球公民基金會比對空拍圖和土地分區資料，確認違規後，寫成正式公文寄給地方政府。</li><li>地方政府到現場稽查，依法斷水斷電、勒令停工。</li></ol>
           <p class="point">居民只負責拍照回報，專業確認和正式檢舉由環保團體承擔，執法交給政府，每一方只做自己做得到的一段。</p>
+          <figure class="shot"><img src="img/disfactory.jpg" width="800" height="621" alt="Disfactory 說明頁：拍照、標記地點上傳，地球公民基金會幫你匿名檢舉" loading="lazy" decoding="async"><figcaption>截圖：Disfactory 說明頁</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://disfactory.tw/" target="_blank" rel="noopener noreferrer">看 Disfactory →</a></div>
         </div>
       </details>
@@ -252,11 +253,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>解決什麼問題</h4>
-          <figure class="shot"><img src="img/thaubing.jpg" width="800" height="500" alt="透明足跡的環境地圖，標出全臺工廠與空氣品質測站" loading="lazy" decoding="async"><figcaption>截圖：透明足跡環境地圖</figcaption></figure>
           <p>工廠排放廢氣、被政府開罰，這些紀錄其實都公開在網路上，但分散在各地環保局，而且只寫工廠的名稱。一般人看到一張罰單，看不出這家工廠屬於哪個大企業集團，也就很難追究責任。</p><p>透明足跡把這些紀錄整理在同一個網站。查一家工廠，就能看到它的污染紀錄，以及它背後的企業集團。</p>
           <h4>誰做什麼</h4>
           <ol role="list"><li>環保團體綠色公民行動聯盟把政府公開的裁罰紀錄和煙囪即時排放數據，整理進同一個資料庫，再到 g0v.tw 提案，找志工一起做。</li><li>g0v.tw 的志工從上市櫃公司的財報整理出母公司和子公司的持股關係，讓每家工廠都能接上它背後的企業集團。 <a href="https://thaubing.gcaa.org.tw/companydata/openGroupLanding/index.html" target="_blank" rel="noopener noreferrer">看集團關係網站</a></li><li>綠盟持續追蹤比對這些資料，找出單看一張罰單看不出來的問題。</li></ol>
           <p class="point">單看一張罰單看不出問題，串起來才看得到責任在誰。2016 年，綠盟用透明足跡發現，六輕（臺灣的大型石化工業區）在 10 個月內有 25,000 筆超標紀錄，卻沒有任何一筆被開罰，因為企業都把這些數據註記成無效。</p>
+          <figure class="shot"><img src="img/thaubing.jpg" width="800" height="500" alt="透明足跡的環境地圖，標出全臺工廠與空氣品質測站" loading="lazy" decoding="async"><figcaption>截圖：透明足跡環境地圖</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://thaubing.gcaa.org.tw/" target="_blank" rel="noopener noreferrer">看透明足跡 →</a></div>
         </div>
       </details>
@@ -271,11 +272,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>解決什麼問題</h4>
-          <figure class="shot"><img src="img/vtaiwan.jpg" width="800" height="455" alt="vTaiwan 首頁：提出議題、開放討論、政策形成" loading="lazy" decoding="async"><figcaption>截圖：vTaiwan 網站</figcaption></figure>
           <p>新科技常常跑得比法律快。2016 年 Uber 在臺灣的合法性引發爭議，計程車司機和支持 Uber 的人看法對立，很容易吵成兩邊。</p><p>vTaiwan 讓不同立場的人先找出彼此都同意的地方，再一起談，而不是一開始就吵。</p>
           <h4>誰做什麼</h4>
           <ol role="list"><li>g0v.tw 志工社群維護平台、主持討論流程，每週三晚上七點開放會議，討論各專案的進展和要處理的議題，歡迎所有人參加。</li><li>大家在 Pol.is 上提出看法、投票，持續約一個月。意見地圖會標出大家都同意的看法，和分歧最大的看法。</li><li>和議題有關的各方代表根據意見地圖開會討論，會議同步在網路上直播。最後由政府回應。</li></ol>
           <p class="point">2016 年的 Uber 案，超過 4,000 人參與線上投票，Uber 同意大家討論出的共識，政府也承諾把共識寫進新規範。vTaiwan 官網指出，討論過的 28 個以上議題，約八成促成政府的具體行動。</p><p>社群最近也開發了實驗中的 <a href="https://civic.vtaiwan.tw/" target="_blank" rel="noopener noreferrer">CiviTalk</a>，用 AI 協助大家了解議題的全貌，而不只是選邊站。</p>
+          <figure class="shot"><img src="img/vtaiwan.jpg" width="800" height="455" alt="vTaiwan 首頁：提出議題、開放討論、政策形成" loading="lazy" decoding="async"><figcaption>截圖：vTaiwan 網站</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://www.vtaiwan.tw/" target="_blank" rel="noopener noreferrer">看 vTaiwan →</a><a class="case-link" href="https://www.vtaiwan.tw/meetups" target="_blank" rel="noopener noreferrer">加入每週會議 →</a></div>
         </div>
       </details>
@@ -290,11 +291,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>解決什麼問題</h4>
-          <figure class="shot"><img src="img/campaign-finance.jpg" width="800" height="500" alt="政治獻金數位化的輸入頁：看一張小圖，填入圖片中的數字、文字或日期" loading="lazy" decoding="async"><figcaption>截圖：輸入頁面（2017 年與 READr 重啟的版本）</figcaption></figure>
           <p>選舉時，誰捐了錢給哪位候選人？2014 年的臺灣，政治獻金紀錄雖然依法公開，卻只能親自到監察院（監督官員的政府機關）翻閱紙本，不能搜尋，想複製只能現場影印。</p><p>反核團體「反核四五六行動」的成員，把紙本報告掃描成檔案，帶到 g0v.tw 黑客松，找大家一起把內容打成數位資料。打完之後，任何人都能上網搜尋。</p>
           <h4>誰做什麼</h4>
           <ol role="list"><li>反核團體到監察院查閱紙本報告，掃描成約 10 GB 的檔案，交給 g0v.tw 志工。</li><li>志工把每個欄位切成一張小圖，每張只有一個數字、一段文字或一個日期。</li><li>網友看一張小圖、打幾個字就完成，不用註冊或登入。同一格由好幾個人輸入，再互相比對，不用另外找人審核。</li></ol>
           <p class="point">每一格都很小，有空檔就能幫忙，上線 24 小時就完成超過 30 萬格的辨識。專案引起社會關注後，立法院（臺灣的國會）在 2018 年修改《政治獻金法》，規定明細必須公開上網，官方查詢平台也在 2019 年上線。</p>
+          <figure class="shot"><img src="img/campaign-finance.jpg" width="800" height="500" alt="政治獻金數位化的輸入頁：看一張小圖，填入圖片中的數字、文字或日期" loading="lazy" decoding="async"><figcaption>截圖：輸入頁面（2017 年與 READr 重啟的版本）</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://campaign-finance.g0v.ctiml.tw/" target="_blank" rel="noopener noreferrer">看政治獻金數位化 →</a></div>
         </div>
       </details>
@@ -309,11 +310,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>解決什麼問題</h4>
-          <figure class="shot"><img src="img/lawtrace.jpg" width="800" height="451" alt="LawTrace 首頁：近期三讀通過、出爐審查報告與審查會議的法案" loading="lazy" decoding="async"><figcaption>截圖：LawTrace 網站</figcaption></figure>
           <p>一條法律要修改時，常有好幾個版本的草案。相關資料卻散在立法院（臺灣的國會）的好幾個網站，而且大多是 PDF、圖片或掃描檔，不能直接複製編輯，也很難搜尋。</p><p>國會助理、記者、議題工作者這些天天追法案的人，得花大把時間翻網站找資料，甚至重新打字，能拿來寫法案、做報導和倡議的時間就變少了。</p><p>LawTrace 把這些資料整理成網站：可以查一條法律過去的條文和修正草案的進度，也能把不同版本的條文逐條並排比較。網站每天更新。</p>
           <h4>誰做什麼</h4>
           <ol role="list"><li>LawTrace 團隊把立法院的法案和會議紀錄，從 PDF、圖片轉成電腦讀得懂的開放資料，任何人都能取用。</li><li>團隊先訪問 11 位天天查法案的工作者，了解他們查資料時卡在哪裡，再做出查詢和條文比較功能。 <a href="https://openfun.tw/ly-user-study/" target="_blank" rel="noopener noreferrer">看研究報告</a></li><li>g0v.tw 每月一次的國會松聚會，讓國會助理、記者、議題工作者交流使用立法院資料的經驗。</li></ol>
           <p class="point">國會助理、記者、議題工作者用 LawTrace 更快查到資料，寫出更好的法案、報導和倡議內容。整理好的資料也開放給所有人，其他團隊已經拿去做出自己的工具，例如<a href="https://lyzer.tw/" target="_blank" rel="noopener noreferrer">立法院公報摘要網站 LYZER</a>。</p>
+          <figure class="shot"><img src="img/lawtrace.jpg" width="800" height="451" alt="LawTrace 首頁：近期三讀通過、出爐審查報告與審查會議的法案" loading="lazy" decoding="async"><figcaption>截圖：LawTrace 網站</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://lawtrace.tw/" target="_blank" rel="noopener noreferrer">看 LawTrace →</a></div>
         </div>
       </details>
@@ -349,7 +350,7 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
   <div data-l="en" lang="en">
   <header>
     <div class="eyebrow">Freedom Film Fest 2026 × g0v.tw</div>
-    <h1 aria-label="How to hack civic society with tech?"><span class="ln">How to</span><span class="hl">hack</span><span class="ln">civic society</span><span class="hl">with tech?</span></h1>
+    <h1 aria-label="How to hack civic society with tech?"><span class="ln">How to</span> <span class="hl">hack</span> <span class="ln">civic society</span> <span class="hl">with tech?</span></h1>
     <p class="sub">You don&#x27;t need to code to make a difference. See how Taiwan&#x27;s g0v.tw community works with civic groups, government and companies to solve public problems with tech.</p>
     <p class="time">About a 4-minute read</p>
     <a class="btn" href="https://pol.is/4mkbdrjhd8" target="_blank" rel="noopener noreferrer">Vote on the haze problem →</a>
@@ -408,11 +409,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>The problem</h4>
-          <figure class="shot"><img src="img/cofacts.jpg" width="800" height="292" alt="Cofacts illustration: Think you got a rumour? Add Cofacts on LINE to check it" loading="lazy" decoding="async"><figcaption>Image: Cofacts promotional illustration</figcaption></figure>
           <p>Many people forward news in family and friend groups on chat apps like WhatsApp. In Taiwan, most people use LINE.</p><p>Rumours and scam messages spread in these private groups, where outsiders can&#x27;t see them or correct them. Fact-checking organisations publish their results on websites, but few people leave the chat to look for them.</p><p>Cofacts brings fact-checking into the chat. Forward a suspicious message to Cofacts&#x27; LINE account and you get the result and its sources. There is no app to download or website to visit: it all happens in LINE.</p>
           <h4>Who does what</h4>
           <ol role="list"><li>People forward suspicious messages to the chatbot. The messages gather on the Cofacts website as a list of messages to check.</li><li>Volunteers pick messages from the list, check them, and write a reply with sources. AI flags points of doubt first, but volunteers decide what is true.</li><li>The chatbot stores the volunteers&#x27; results. When someone forwards the same message later, it sends the result straight away.</li></ol>
           <p class="point">Forwarding fake news is easy. Checking it is hard. With Cofacts, you forward a message to the chatbot and get a result, and once volunteers have checked a message, everyone after that gets the result directly. Volunteers aren&#x27;t always professional fact-checkers, but a 2023 study found Cofacts&#x27; replies were as accurate as professional fact-checks. Thailand built its own version using Cofacts&#x27; open-source code.</p>
+          <figure class="shot"><img src="img/cofacts.jpg" width="800" height="292" alt="Cofacts illustration: Think you got a rumour? Add Cofacts on LINE to check it" loading="lazy" decoding="async"><figcaption>Image: Cofacts promotional illustration</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://en.cofacts.tw/" target="_blank" rel="noopener noreferrer">Visit Cofacts (English) →</a></div>
         </div>
       </details>
@@ -427,11 +428,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>The problem</h4>
-          <figure class="shot"><img src="img/disfactory.jpg" width="800" height="621" alt="Disfactory&#x27;s guide: take a photo, mark the location and upload, and Citizens of the Earth files the report for you" loading="lazy" decoding="async"><figcaption>Screenshot: Disfactory guide page</figcaption></figure>
           <p>In Taiwan, some factories are built illegally on farmland. Nearby residents know best where new factories appear, but filing a formal report is complicated and requires your name. Many people fear retaliation and stay silent.</p><p>With Disfactory, a photo and a location are enough to report. You don&#x27;t have to give your name, understand the rules, or face the government alone. The map shows each report&#x27;s progress, such as in progress, power cut off or demolished, so reporters can see what happens to their report.</p>
           <h4>Who does what</h4>
           <ol role="list"><li>Residents take photos of a factory, mark the location and upload them to Disfactory. People who can&#x27;t be on site can also compare aerial photos on a computer to help spot suspicious factories.</li><li>The environmental group Citizens of the Earth, Taiwan compares aerial photos with land-zoning data. Once it confirms a violation, it writes an official letter to the local government.</li><li>The local government inspects the site and, under the law, cuts off water and power or orders work to stop.</li></ol>
           <p class="point">Residents only take photos and report. The environmental group takes on the expert checking and the formal complaint, and the government enforces. Each party does only the part it can do.</p>
+          <figure class="shot"><img src="img/disfactory.jpg" width="800" height="621" alt="Disfactory&#x27;s guide: take a photo, mark the location and upload, and Citizens of the Earth files the report for you" loading="lazy" decoding="async"><figcaption>Screenshot: Disfactory guide page</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://disfactory.tw/" target="_blank" rel="noopener noreferrer">Visit Disfactory (Traditional Chinese) →</a></div>
         </div>
       </details>
@@ -446,11 +447,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>The problem</h4>
-          <figure class="shot"><img src="img/thaubing.jpg" width="800" height="500" alt="Thaubing Footprint&#x27;s map of factories and air-quality stations across Taiwan" loading="lazy" decoding="async"><figcaption>Screenshot: Thaubing Footprint&#x27;s map</figcaption></figure>
           <p>Factories pollute and get fined, and these records are public online. But they are scattered across local environmental bureaus and list only the factory&#x27;s name. Looking at one fine, you can&#x27;t tell which big corporate group the factory belongs to, so it is hard to hold anyone accountable.</p><p>Thaubing Footprint (thaubing means “transparent” in Taiwanese) puts the records on one website. Look up a factory and you see its pollution record and the corporate group behind it.</p>
           <h4>Who does what</h4>
           <ol role="list"><li>The environmental group Green Citizens&#x27; Action Alliance puts the government&#x27;s published penalty records and real-time chimney emission data into one database, then pitches the project at g0v.tw to find volunteers.</li><li>g0v.tw volunteers work out parent–subsidiary shareholdings from listed companies&#x27; financial reports, so every factory can be linked to the corporate group behind it. <a href="https://thaubing.gcaa.org.tw/companydata/openGroupLanding/index.html" target="_blank" rel="noopener noreferrer">Corporate-group site (Traditional Chinese)</a></li><li>The Alliance keeps tracking and cross-checking the data to find problems you can&#x27;t see from a single fine.</li></ol>
           <p class="point">One fine tells you little. Linked together, the data shows who is responsible. In 2016 the Alliance used Thaubing Footprint to find that the Sixth Naphtha Cracker complex (a large petrochemical complex in Taiwan) recorded 25,000 readings over the legal limit in 10 months, yet not one was penalised, because the company had marked all of them as invalid.</p>
+          <figure class="shot"><img src="img/thaubing.jpg" width="800" height="500" alt="Thaubing Footprint&#x27;s map of factories and air-quality stations across Taiwan" loading="lazy" decoding="async"><figcaption>Screenshot: Thaubing Footprint&#x27;s map</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://thaubing.gcaa.org.tw/" target="_blank" rel="noopener noreferrer">Visit Thaubing Footprint (Traditional Chinese) →</a></div>
         </div>
       </details>
@@ -465,11 +466,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>The problem</h4>
-          <figure class="shot"><img src="img/vtaiwan.jpg" width="800" height="455" alt="vTaiwan&#x27;s homepage: propose an issue, discuss openly, shape policy" loading="lazy" decoding="async"><figcaption>Screenshot: vTaiwan website</figcaption></figure>
           <p>New technology often moves faster than the law. In 2016, Uber&#x27;s legal status in Taiwan sparked a dispute. Taxi drivers and Uber supporters stood on opposite sides, and it could easily have become two camps shouting at each other.</p><p>vTaiwan lets people with different views start from what they agree on, then talk, instead of fighting from the start.</p>
           <h4>Who does what</h4>
           <ol role="list"><li>The g0v.tw volunteer community maintains the platform and runs the discussion process. Its open meeting, online and in person, is every Wednesday at 7 pm. It covers project progress and the issues to take up, and everyone is welcome.</li><li>Everyone votes on statements in Pol.is for about a month and can add their own views. The opinion map shows the views everyone agrees on and the ones that divide people most.</li><li>Representatives of the parties involved meet to discuss, guided by the opinion map, and the meeting is livestreamed. The government then responds to the outcome.</li></ol>
           <p class="point">In the 2016 Uber case, more than 4,000 people took part in the online vote, Uber agreed to the consensus that emerged, and the government pledged to turn it into new regulation. vTaiwan&#x27;s website says that of the more than 28 issues discussed, around 80% led to decisive government action.</p><p>The community recently built an experimental tool, <a href="https://civic.vtaiwan.tw/" target="_blank" rel="noopener noreferrer">CiviTalk</a>, that uses AI to help people see the full picture of an issue, not just pick a side.</p>
+          <figure class="shot"><img src="img/vtaiwan.jpg" width="800" height="455" alt="vTaiwan&#x27;s homepage: propose an issue, discuss openly, shape policy" loading="lazy" decoding="async"><figcaption>Screenshot: vTaiwan website</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://info.vtaiwan.tw/" target="_blank" rel="noopener noreferrer">Visit vTaiwan (English) →</a><a class="case-link" href="https://www.vtaiwan.tw/meetups" target="_blank" rel="noopener noreferrer">Join the weekly meeting (Traditional Chinese) →</a></div>
         </div>
       </details>
@@ -484,11 +485,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>The problem</h4>
-          <figure class="shot"><img src="img/campaign-finance.jpg" width="800" height="500" alt="The typing page: look at a small image and type the number, text or date it shows" loading="lazy" decoding="async"><figcaption>Screenshot: the typing page (the 2017 relaunch with READr)</figcaption></figure>
           <p>Who gave money to which candidate? In 2014, Taiwan&#x27;s political donation records were public by law, but you could only read paper copies in person at the Control Yuan (the government body that oversees officials). You couldn&#x27;t search them, and copying meant photocopying on the spot.</p><p>Members of the anti-nuclear group 反核四五六行動 scanned the paper reports and brought them to a g0v.tw hackathon, asking for help to turn them into digital data. Once typed up, anyone could search them online.</p>
           <h4>Who does what</h4>
           <ol role="list"><li>Anti-nuclear group members read the paper reports at the Control Yuan and scanned them into about 10 GB of files, which they handed to g0v.tw volunteers.</li><li>Volunteers cut every field into a small image, each holding just one number, one piece of text or one date.</li><li>Anyone online can look at a small image and type what it shows. There is no sign-up or login. Several people type the same cell and their entries are compared, so no separate reviewers are needed.</li></ol>
           <p class="point">Each cell is tiny, so anyone with a spare moment can help. Within 24 hours, more than 300,000 cells were done. After the project drew public attention, Taiwan&#x27;s Legislative Yuan (its parliament) amended the Political Donations Act in 2018 to require itemised records to be published online, and an official search platform opened in 2019.</p>
+          <figure class="shot"><img src="img/campaign-finance.jpg" width="800" height="500" alt="The typing page: look at a small image and type the number, text or date it shows" loading="lazy" decoding="async"><figcaption>Screenshot: the typing page (the 2017 relaunch with READr)</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://campaign-finance.g0v.ctiml.tw/" target="_blank" rel="noopener noreferrer">Visit the site (Traditional Chinese) →</a></div>
         </div>
       </details>
@@ -503,11 +504,11 @@ footer .flowers { display: block; width: calc(100% + 40px); margin: 20px -20px 0
         </summary>
         <div class="case-body">
           <h4>The problem</h4>
-          <figure class="shot"><img src="img/lawtrace.jpg" width="800" height="451" alt="LawTrace&#x27;s homepage: bills recently passed, reported out of committee, and up for review" loading="lazy" decoding="async"><figcaption>Screenshot: LawTrace website</figcaption></figure>
           <p>A law being amended often has several draft versions. The related data sits on several different websites of the Legislative Yuan (Taiwan&#x27;s parliament), mostly as PDFs, images or scans that you can&#x27;t copy or edit and that are hard to search.</p><p>Parliamentary assistants, journalists and issue campaigners who follow bills every day spend a lot of time browsing sites for data, even retyping it. That leaves less time to draft bills, report and campaign.</p><p>LawTrace puts the data on one website. You can see a law&#x27;s past provisions and the progress of proposed amendments, and compare different versions side by side, article by article. The site updates daily.</p>
           <h4>Who does what</h4>
           <ol role="list"><li>The LawTrace team turns the Legislative Yuan&#x27;s bills and meeting records from PDFs and images into machine-readable open data that anyone can use.</li><li>The team first interviewed 11 people who follow bills every day, to find out where they get stuck, then built search and article-comparison features. <a href="https://openfun.tw/ly-user-study_en/" target="_blank" rel="noopener noreferrer">Read the research report (English)</a></li><li>g0v.tw&#x27;s monthly meet-up, the Congressthon, lets parliamentary assistants, journalists and issue campaigners share how they use Legislative Yuan data.</li></ol>
           <p class="point">Parliamentary assistants, journalists and campaigners find data faster with LawTrace and write better bills, reports and campaign material. The cleaned data is also open to everyone, and other teams have already built their own tools on it, such as <a href="https://lyzer.tw/" target="_blank" rel="noopener noreferrer">LYZER (Traditional Chinese site)</a>, which summarises Legislative Yuan gazettes.</p>
+          <figure class="shot"><img src="img/lawtrace.jpg" width="800" height="451" alt="LawTrace&#x27;s homepage: bills recently passed, reported out of committee, and up for review" loading="lazy" decoding="async"><figcaption>Screenshot: LawTrace website</figcaption></figure>
           <div class="case-links"><a class="case-link" href="https://lawtrace.tw/" target="_blank" rel="noopener noreferrer">Visit LawTrace (Traditional Chinese) →</a></div>
         </div>
       </details>
